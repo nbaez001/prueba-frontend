@@ -1,0 +1,181 @@
+@mixin mat-table-columns($columns) {
+  .mat-column- {
+    @each $colName, $props in $columns {
+      $width: map-get($props, "width");
+
+      &#{$colName} {
+        flex: $width !important;
+        width: $width !important;
+
+        @if map-has-key($props, "color") {
+          color: map-get($props, "color") !important;
+        }
+
+        @if map-has-key($props, "text-align") {
+          text-align: map-get($props, "text-align") !important;
+        }
+
+        @if map-has-key($props, "padding-left") {
+          padding-left: map-get($props, "padding-left") !important;
+        }
+
+        @if map-has-key($props, "padding-right") {
+          padding-left: map-get($props, "padding-right") !important;
+        }
+
+        @if map-has-key($props, "display") {
+          display: map-get($props, "display") !important;
+        }
+
+        @if map-has-key($props, "position") {
+          position: map-get($props, "position") !important;
+        }
+      }
+    }
+  }
+}
+
+.table-container {
+  overflow: auto;
+  .mat-column-select {
+    overflow: initial;
+  }
+  .empty {
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    bottom: 0px;
+    left: 0px;
+    font-size: 0.8em;
+    font-weight: bold;
+  }
+  .mat-paginator-sticky {
+    bottom: 0px !important;
+    left: 0px !important;
+    position: sticky !important;
+    z-index: 10 !important;
+  }
+  .filter {
+    text-align: right;
+    mat-form-field {
+      max-width: 200px !important;
+      margin-left: 0px !important;
+      margin-right: 5px !important;
+      margin-top: 4px;
+    }
+
+    ::ng.deep .mat-form-field-subscript-wrapper {
+      margin-top: 3px !important;
+      // top: calc(100% - 1.7916666667em);
+    }
+
+    ::ng-deep .mat-form-field-wrapper {
+      padding-bottom: 0px !important;
+    }
+
+    ::ng-deep .mat-form-field-flex > .mat-form-field-infix {
+      padding: 0.4em 0px !important;
+    }
+    ::ng-deep .mat-form-field-label-wrapper {
+      top: -1.5em;
+    }
+
+    ::ng-deep
+      .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
+      .mat-form-field-label {
+      transform: translateY(-1.1em) scale(0.75);
+      width: 133.33333%;
+    }
+  }
+}
+
+.table-container table {
+  width: 100%;
+  table-layout: fixed;
+  td {
+    background-color: #fff;
+    position: relative;
+    padding-left: 5px;
+  }
+  td.mat-table-sticky {
+    padding-left: 0px;
+  }
+  tr:hover td {
+    background-color: #f2f2f2 !important;
+  }
+}
+
+.spinerTable {
+  padding-top: 5px;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  position: sticky;
+}
+
+td.mat-cell:first-of-type,
+td.mat-footer-cell:first-of-type,
+th.mat-header-cell:first-of-type {
+  padding-left: 10px;
+}
+
+td.mat-cell:last-of-type,
+td.mat-footer-cell:last-of-type,
+th.mat-header-cell:last-of-type {
+  padding-right: 0px;
+}
+
+// .mat-row:hover {
+//   background-color: #f2f2f2 !important;
+// }
+
+// BOTON PARA INPUT
+.btn-icon-input-table {
+  background-color: #fff !important;
+  position: absolute;
+  top: 3px;
+  right: -9px;
+  margin: -10px 0;
+  padding: 0;
+  min-width: 25px;
+  height: 30px;
+  width: 30px;
+  mat-icon {
+    line-height: 11px !important;
+  }
+}
+
+// FORM FIELD DENTRO DE TABLA
+.table-container {
+  td {
+    mat-form-field {
+      max-width: calc(100% - 5px) !important;
+      margin-left: 0px !important;
+      margin-right: 5px !important;
+      margin-top: 4px;
+    }
+
+    ::ng.deep .mat-form-field-subscript-wrapper {
+      margin-top: 3px !important;
+      // top: calc(100% - 1.7916666667em);
+    }
+
+    ::ng-deep .mat-form-field-wrapper {
+      padding-bottom: 13px !important;
+    }
+
+    ::ng-deep .mat-form-field-flex > .mat-form-field-infix {
+      padding: 0.4em 0px !important;
+    }
+    ::ng-deep .mat-form-field-label-wrapper {
+      top: -1.5em;
+    }
+
+    ::ng-deep
+      .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
+      .mat-form-field-label {
+      transform: translateY(-1.1em) scale(0.75);
+      width: 133.33333%;
+    }
+  }
+}

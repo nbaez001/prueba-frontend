@@ -1,0 +1,50 @@
+<mat-toolbar class="mat-primary mat-dialog-header">
+    <span>{{dataDialog.titulo}}</span>
+    <button tabindex="-1" mat-icon-button [mat-dialog-close]="null">
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-toolbar>
+<div mat-dialog-content>
+    <form [formGroup]="formularioGrp">
+        <mat-grid-list cols="12" rowHeight="56px">
+            <mat-grid-tile [ResponsiveRows]="{xs: 12, sm: 6, md: 6, lg: 6, xl: 6}">
+                <mat-form-field>
+                    <mat-label>Nombre</mat-label>
+                    <input matInput formControlName="nombre" placeholder="Nombre" type="text" [Uppercased]
+                        cdkFocusInitial>
+                    <mat-error *ngIf="formErrors.nombre">{{formErrors.nombre}}</mat-error>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile [ResponsiveRows]="{xs: 12, sm: 6, md: 6, lg: 6, xl: 6}">
+                <mat-form-field>
+                    <mat-label>Usuario</mat-label>
+                    <input matInput formControlName="user" placeholder="Usuario" type="text" [Uppercased]>
+                    <mat-error *ngIf="formErrors.user">{{formErrors.user}}</mat-error>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile [ResponsiveRows]="{xs: 12, sm: 6, md: 6, lg: 6, xl: 6}">
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input matInput formControlName="password" placeholder="Password" type="text">
+                    <mat-error *ngIf="formErrors.password">{{formErrors.password}}</mat-error>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile [ResponsiveRows]="{xs: 12, sm: 6, md: 6, lg: 6, xl: 6}">
+                <mat-form-field>
+                    <mat-label>Sucursal</mat-label>
+                    <mat-select formControlName="sucursal">
+                        <mat-option *ngFor="let sucursal of listaSucursal" [value]="sucursal">
+                            {{sucursal.nombre}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="formErrors.sucursal">{{formErrors.sucursal}}</mat-error>
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </form>
+</div>
+<div mat-dialog-actions align="center">
+    <button mat-raised-button color="primary" type="button" (click)="regUsuario()" [class.spinner]="guardar"
+        [disabled]="guardar">Guardar</button>
+    <button mat-raised-button [mat-dialog-close]="">Salir</button>
+</div>

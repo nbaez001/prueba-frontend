@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/styles/app.scss"
             ],
             "scripts": []
           },
@@ -123,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "prueba-frontend"
+    }
+  },
+  "defaultProject": "prueba-frontend",
+  "cli": {
+    "analytics": "282eabc5-f988-4ff7-a22b-9cd76cd6c953"
+  }
 }

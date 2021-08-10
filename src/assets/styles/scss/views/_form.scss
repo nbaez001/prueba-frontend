@@ -1,0 +1,56 @@
+.d-none {
+    display: none;
+}
+
+// BOTON PARA INPUT
+.btn-icon-input {
+    background-color: #ffffff !important;
+    position: absolute !important;
+    top: 3px;
+    right: -10px;
+    margin: -11px 0 !important;
+    padding: 0 !important;
+    min-width: 25px !important;
+}
+
+input:read-only {
+    color: #3f51b5;
+}
+
+.mat-raised-button {
+    box-shadow: 1px 2px 4px 0.5px #888888 !important;
+}
+
+// STYLO SPINNER ON SELECT
+.select-spinner {
+    display: flex;
+    align-items: center;
+}
+
+.select-spinner > span {
+    font-size: 0.9em;
+    flex: 1;
+}
+// END STYLO SPINNER ON SELECT
+
+// ESTILO PARA ANCHO DE SELECT
+.mat-select-panel {
+    max-width: 1000px !important;
+}
+
+.cdk-overlay-connected-position-bounding-box {
+    .cdk-overlay-pane {
+        width: auto !important;
+        max-width: 1000px !important;
+        right: auto !important;
+        .mat-autocomplete-panel {
+            max-width: 1000px !important;
+        }
+    }
+}
+// FIN ESTILO PARA ANCHO DE SELECT
+
+.btn-img-icon {
+    width: auto;
+    height: 30px;
+}

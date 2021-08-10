@@ -1,0 +1,86 @@
+mat-card {
+  margin: 10px;
+  padding: 15px 24px 24px 24px !important;
+  mat-card-title {
+    font-size: 14px !important;
+    font-weight: bold !important;
+    margin-bottom: 8px !important;
+  }
+  .mat-card-header-text {
+    margin: 0px !important;
+  }
+}
+
+mat-expansion-panel {
+  margin: 10px !important;
+  mat-expansion-panel-header {
+    font-size: 14px !important;
+    font-weight: bold !important;
+  }
+}
+
+.button-separate {
+  margin-left: 10px !important;
+}
+
+table {
+  width: 100%;
+}
+
+mat-form-field {
+  width: 100%;
+  margin: auto 10px;
+  textarea {
+    height: 100%;
+  }
+}
+
+// mat-dialog-content > * {
+//   font-size: 12px !important;
+// }
+
+.center {
+  text-align: center;
+}
+
+.box-section-title {
+  font-weight: bold;
+}
+
+//INICIO - ESTILOS PARA LA BOTONES INFERIORES DE ACUERDO A TAMAÑO
+@media screen and (min-width: 600px) {
+  .btnRigth {
+    margin-top: 10px;
+    direction: initial; //PARA ALINEAR LOS BOTONES A LA DERECHA
+    display: flex; //PARA ALINEAR LOS BOTONES A LA DERECHA --> REDUCE EL TAMAÑO DE BOTONES AL MINIMO
+    justify-content: flex-end; //PARA ALINEAR LOS BOTONES A LA DERECHA
+    button {
+      margin-right: 6px;
+      min-width: 64px !important;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .btnRigth {
+    margin-top: 10px;
+    button {
+      display: block;
+      margin-bottom: 8px;
+      width: 100% !important;
+    }
+    button:nth-last-of-type(1) {
+      //LAST-OF-TYPE(1) --> ULTIMO
+      margin-bottom: 0px;
+    }
+  }
+}
+//FIN - ESTILOS PARA LA BOTONES INFERIORES DE ACUERDO A TAMAÑO
+
+// SUBTITULO EN MEDIO MAT CARD
+.subtitulo {
+  margin-top: 5px;
+  margin-bottom: 0px;
+  font-size: 14px;
+  font-weight: bold;
+}
